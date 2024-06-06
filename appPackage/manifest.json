@@ -1,0 +1,51 @@
+{
+	"$schema": "https://developer.microsoft.com/en-us/json-schemas/teams/v1.17/MicrosoftTeams.schema.json",
+	"version": "1.0.0",
+	"manifestVersion": "1.17",
+	"id": "${{TEAMS_APP_ID}}",
+	"name": {
+		"short": "Hello World",
+		"full": ""
+	},
+	"developer": {
+		"name": "Colton McClintock",
+		"mpnId": "",
+		"websiteUrl": "https://www.coltonmcclintock.com",
+		"privacyUrl": "https://www.example.com/termofuse",
+		"termsOfUseUrl": "https://www.example.com/privacy"
+	},
+	"description": {
+		"short": "Just a helloworld app",
+		"full": " to test the feasibility of creating spfx webparts, teams apps, etc."
+	},
+	"icons": {
+		"outline": "outline.png",
+		"color": "color.png"
+	},
+	"accentColor": "#293be3",
+	"validDomains": [
+		"${{TAB_DOMAIN}}"
+	],
+	"bots": [],
+	"composeExtensions": [],
+	"staticTabs": [
+		{
+			"entityId": "index",
+			"name": "Personal Tab",
+			"contentUrl": "${{TAB_ENDPOINT}}/index.html#/tab",
+			"websiteUrl": "${{TAB_ENDPOINT}}/index.html#/tab",
+			"scopes": [
+				"personal"
+			]
+		}
+	],
+	"configurableTabs": [],
+	"permissions": [
+		"identity",
+		"messageTeamMembers"
+	],
+	"webApplicationInfo": {
+		"id": "${{AAD_APP_CLIENT_ID}}",
+		"resource": "api://${{TAB_DOMAIN}}/${{AAD_APP_CLIENT_ID}}"
+	}
+}
